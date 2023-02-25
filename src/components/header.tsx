@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Drawer, SwipeableDrawer } from "@mui/material";
+import { Drawer, SwipeableDrawer, Stack } from "@mui/material";
 
 import Sidebar from "./sidebar";
 import { Pages } from "@/pages/pages";
@@ -91,10 +91,12 @@ const Header = () => {
           </Container>
         </AppBar>
       </header>
+      <Stack direction="row" spacing={0}>
       <Box sx={{ display: { xs: "none", md: "flex" } }}>
         <Sidebar />
       </Box>
       <Pages />
+      </Stack>
       <SwipeableDrawer
         anchor="left"
         open={drawer == true}

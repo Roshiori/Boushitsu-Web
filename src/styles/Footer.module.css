@@ -1,0 +1,9 @@
+.footer{
+    margin-top: auto;
+}
+.footerText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}

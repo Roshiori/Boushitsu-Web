@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useContext ,createContext } from "react";
 import Grid from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -21,7 +21,12 @@ import Sidebar from "./sidebar";
 import { Pages } from "@/pages/pages";
 //Components
 
-const pages = ["about ITS", "hoge", "fuga"];
+type drawerType = {
+  drawer: boolean;
+  setDrawer: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const ContextButton = createContext<drawerType>({} as drawerType);
 
 const Header = () => {
   const [drawer, setDrawer] = useState(false);
@@ -105,7 +110,9 @@ const Header = () => {
         onOpen={openDrawer}
         onClose={openDrawer}
       >
+        <ContextButton.Provider value={{drawer, setDrawer}}>
         <Sidebar />
+        </ContextButton.Provider>
       </SwipeableDrawer>
     </>
   );

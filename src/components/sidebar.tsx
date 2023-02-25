@@ -29,7 +29,7 @@ const Sidebar = () => {
           color: "white",
           backgroundColor: "text.primary",
           width: drawerWidth,
-          height: "100vh"
+          minHeight: "100vh"
         }}
       >
         <Box sx={{display: {xs:"flex", md:"none"}}}>

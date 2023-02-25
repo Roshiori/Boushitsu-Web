@@ -1,5 +1,7 @@
 .footer{
     margin-top: auto;
+    bottom: 0;
+    width: 100%;
 }
 .footerText{
     display: flex;

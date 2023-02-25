@@ -15,6 +15,8 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Drawer, SwipeableDrawer, Stack } from "@mui/material";
 
+import Styles from "../styles/Home.module.css"
+
 import Sidebar from "./sidebar";
 import { Pages } from "@/pages/pages";
 //Components
@@ -91,7 +93,7 @@ const Header = () => {
           </Container>
         </AppBar>
       </header>
-      <Stack direction="row" spacing={0}>
+      <Stack direction="row" spacing={0} sx={{}} className={Styles.main}>
       <Box sx={{ display: { xs: "none", md: "flex" } }}>
         <Sidebar />
       </Box>

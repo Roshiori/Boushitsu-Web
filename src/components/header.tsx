@@ -40,7 +40,7 @@ const Header = () => {
         <AppBar position="static" color="primary" elevation={0}>
           <Toolbar disableGutters>
             <Typography
-              variant="h5"
+              variant="h6"
               noWrap
               component="a"
               href="/"
@@ -71,7 +71,7 @@ const Header = () => {
               </IconButton>
             </Box>
             <Typography
-              variant="h5"
+              variant="h6"
               noWrap
               component="a"
               href="/"

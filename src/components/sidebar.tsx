@@ -12,19 +12,24 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import CloseIcon from "@mui/icons-material/Close";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { width } from "@mui/system";
 
+//pages
+
+//Icons
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import PinDropIcon from "@mui/icons-material/PinDrop";
+import MailIcon from "@mui/icons-material/Mail";
+
+//useContext
 import { ContextButton } from "./header";
 
-//const [isOpen, setIsOoen] = React.useState(false);
-
 const Sidebar = () => {
-  const drawerWidth = 240;
-  const {drawer, setDrawer} = useContext(ContextButton)
+  const drawerWidth = 250;
+  const { drawer, setDrawer } = useContext(ContextButton);
 
   return (
     <>
@@ -55,17 +60,29 @@ const Sidebar = () => {
           </IconButton>
         </Box>
         <List>
-          <ListItemButton>
-            <MailIcon />
-            <ListItemText>これがリストアイテム</ListItemText>
+          <ListItemButton component = "a" href = "/">
+            <ListItemIcon sx={{ color: "white" }}>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText>ホーム</ListItemText>
           </ListItemButton>
-          <ListItemButton>
-            <MailIcon />
-            <ListItemText>これがリストアイテム</ListItemText>
+          <ListItemButton component = "a" href="/about">
+            <ListItemIcon sx={{ color: "white" }}>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText>ITソルーション室とは</ListItemText>
           </ListItemButton>
-          <ListItemButton>
-            <MailIcon />
-            <ListItemText>これがリストアイテム</ListItemText>
+          <ListItemButton component = "a" href="/access">
+            <ListItemIcon sx={{ color: "white" }}>
+              <PinDropIcon />
+            </ListItemIcon>
+            <ListItemText>アクセス</ListItemText>
+          </ListItemButton>
+          <ListItemButton component = "a" href = "/contact">
+            <ListItemIcon sx={{ color: "white" }}>
+              <MailIcon />
+            </ListItemIcon>
+            <ListItemText>お問い合わせ</ListItemText>
           </ListItemButton>
         </List>
       </Box>

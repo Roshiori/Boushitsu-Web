@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useContext ,createContext } from "react";
+import { useState, useContext, createContext } from "react";
 import Grid from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -12,10 +12,9 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { Drawer, SwipeableDrawer, Stack } from "@mui/material";
 
-import Styles from "../styles/Home.module.css"
+import Styles from "../styles/Home.module.css";
 
 import Sidebar from "./sidebar";
 import { Pages } from "@/pages/pages";
@@ -23,8 +22,8 @@ import { Pages } from "@/pages/pages";
 
 type drawerType = {
   drawer: boolean;
-  setDrawer: React.Dispatch<React.SetStateAction<boolean>>
-}
+  setDrawer: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 export const ContextButton = createContext<drawerType>({} as drawerType);
 
@@ -33,76 +32,69 @@ const Header = () => {
 
   const openDrawer = () => {
     setDrawer(!drawer);
-    if (drawer == true) {
-      console.log("つるー");
-    } else if (drawer == false) {
-      console.log("ふぉるす");
-    }
   };
 
   return (
     <>
       <header>
         <AppBar position="static" color="primary" elevation={0}>
-          <Container>
-            <Toolbar disableGutters>
-              <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                href="/"
-                sx={{
-                  mr: 2,
-                  display: { xs: "none", md: "flex" },
-                  flexGrow: 1,
-                  fontWeight: 700,
-                  letterSpacing: ".3rem",
-                  color: "inherit",
-                  textDecoration: "none",
-                }}
-              >
-                ITSolution
-              </Typography>
+          <Toolbar disableGutters>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                flexGrow: 1,
+                letterSpacing: ".1rem",
+                fontWeight: "700",
+                color: "inherit",
+                textDecoration: "none",
+                marginLeft: "40px"
+              }}
+            >
+              静岡大学 ITソルーション室
+            </Typography>
 
-              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-                <IconButton
-                  size="large"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={openDrawer}
-                  color="inherit"
-                >
-                  <MenuIcon />
-                </IconButton>
-              </Box>
-              <Typography>{drawer ? "true" : "false"}</Typography>
-              <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                href="/"
-                sx={{
-                  mr: 2,
-                  display: { xs: "flex", md: "none" },
-                  flexGrow: 1,
-                  fontWeight: 700,
-                  letterSpacing: ".3rem",
-                  color: "inherit",
-                  textDecoration: "none",
-                }}
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={openDrawer}
+                color="inherit"
               >
-                ITSolution
-              </Typography>
-            </Toolbar>
-          </Container>
+                <MenuIcon />
+              </IconButton>
+            </Box>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontWeight: 700,
+                letterSpacing: ".1rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              静岡大学 ITソルーション室
+            </Typography>
+          </Toolbar>
         </AppBar>
       </header>
       <Stack direction="row" spacing={0} sx={{}} className={Styles.main}>
-      <Box sx={{ display: { xs: "none", md: "flex" } }}>
-        <Sidebar />
-      </Box>
-      <Pages />
+        <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Sidebar />
+        </Box>
+        <Pages />
       </Stack>
       <SwipeableDrawer
         anchor="left"
@@ -110,8 +102,8 @@ const Header = () => {
         onOpen={openDrawer}
         onClose={openDrawer}
       >
-        <ContextButton.Provider value={{drawer, setDrawer}}>
-        <Sidebar />
+        <ContextButton.Provider value={{ drawer, setDrawer }}>
+          <Sidebar />
         </ContextButton.Provider>
       </SwipeableDrawer>
     </>

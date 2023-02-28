@@ -11,7 +11,7 @@ const copyrightString = () => {
   return copyright;
 };
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <>
       <footer className={Styles.footer}>
@@ -24,3 +24,5 @@ export const Footer = () => {
     </>
   );
 };
+
+export default Footer;

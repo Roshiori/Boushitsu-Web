@@ -20,11 +20,19 @@ import Sidebar from "./sidebar";
 import { Pages } from "@/pages/pages";
 //Components
 
-//useContext
-import { ContextButton } from "./Layout";
+type drawerType = {
+  drawer: boolean;
+  setDrawer: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const ContextButton = createContext<drawerType>({} as drawerType);
 
 const Header = () => {
-    const { drawer, setDrawer } = useContext(ContextButton);
+  const [drawer, setDrawer] = useState(false);
+
+  const openDrawer = () => {
+    setDrawer(!drawer);
+  };
 
   return (
     <>
@@ -52,11 +60,11 @@ const Header = () => {
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
-                onClick={() => setDrawer(!drawer)} 
                 size="large"
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
+                onClick={openDrawer}
                 color="inherit"
               >
                 <MenuIcon />
@@ -82,6 +90,22 @@ const Header = () => {
           </Toolbar>
         </AppBar>
       </header>
+      <Stack direction="row" spacing={0} sx={{}} className={Styles.main}>
+        <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Sidebar />
+        </Box>
+        <Pages />
+      </Stack>
+      <SwipeableDrawer
+        anchor="left"
+        open={drawer == true}
+        onOpen={openDrawer}
+        onClose={openDrawer}
+      >
+        <ContextButton.Provider value={{ drawer, setDrawer }}>
+          <Sidebar />
+        </ContextButton.Provider>
+      </SwipeableDrawer>
     </>
   );
 };

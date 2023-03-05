@@ -14,10 +14,6 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Drawer, SwipeableDrawer, Stack } from "@mui/material";
 
-import Styles from "../styles/Home.module.css";
-
-import Sidebar from "./sidebar";
-import { Pages } from "@/pages/pages";
 //Components
 
 //useContext

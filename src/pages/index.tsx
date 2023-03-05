@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 
-import { Pages } from "./pages";
+import { Top } from "./top";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <div className={Styles.wrapper}>
-        <p>ああああ</p>
+        <Top/>
       </div>
     </>
   );

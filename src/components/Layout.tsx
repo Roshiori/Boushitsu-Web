@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactElement, ReactNode, useMemo } from "react";
 import { useState, useContext, createContext } from "react";
 
 import { Box } from "@mui/system";
@@ -11,6 +11,10 @@ import Footer from "./footer";
 
 import Styles from "../styles/Home.module.css";
 
+type Children = {
+    children: React.ReactNode;
+}
+
 type drawerType = {
   drawer: boolean;
   setDrawer: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,7 +22,7 @@ type drawerType = {
 
 export const ContextButton = createContext<drawerType>({} as drawerType);
 
-const Layout = ({ children }) => {
+export const Layout = React.memo(({ children }: Children) => {
   const [drawer, setDrawer] = useState(false);
 
   const openDrawer = () => {
@@ -49,6 +53,5 @@ const Layout = ({ children }) => {
       <Footer />
     </>
   );
-};
-
-export default Layout;
+}
+);

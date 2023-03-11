@@ -1,8 +1,9 @@
 import React from "react";
 import { Box } from "@mui/system";
-import { Button, TextField, Typography } from "@mui/material";
+import { Button, Grid, TextField, Typography } from "@mui/material";
 
 import { SubmitHandler, useForm } from "react-hook-form";
+import Router from "next/router";
 
 type InputSrc = {
   name: string;
@@ -20,6 +21,7 @@ export const Form = () => {
   const onSubmit: SubmitHandler<InputSrc> = (data) => {
     console.log(data);
     console.log(watch("email"));
+    Router.push("./received")
   };
 
   return (
@@ -37,10 +39,11 @@ export const Form = () => {
             {...register("email", {required:true, pattern: /\S+@\S+\.\S+/})}
           />
           <TextField
+            sx = {{width: "60vw"}}
             id="free"
             multiline
             fullWidth
-            label="お問い合わせ内容（入室希望もこちらに）"
+            label="お問い合わせ内容"
             rows={5}
             {...register("free")}
           />

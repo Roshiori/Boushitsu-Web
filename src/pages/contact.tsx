@@ -12,14 +12,12 @@ const Contact = () => {
   return (
     <>
       <div className={Styles.wrapper}>
-        <ContentBox
-          content={
-            <Box>
-              <h2>お問い合わせ</h2>
-              <Form />
-            </Box>
-          }
-        />
+        <ContentBox>
+          <Box>
+            <h2>お問い合わせ</h2>
+            <Form />
+          </Box>
+        </ContentBox>
       </div>
     </>
   );

@@ -1,12 +1,11 @@
 import React from "react";
 import { Box } from "@mui/system";
 
-type Props = {
-  content: JSX.Element
+type Children = {
+  children: React.ReactNode;
 }
 
-const ContentBox = (props: Props) => {
-  const { content } = props;
+const ContentBox = ({ children }: Children) => {
   return (
     <>
       <Box
@@ -22,7 +21,7 @@ const ContentBox = (props: Props) => {
           backgroundColor: "white",
         }}
       >
-        { content }
+        { children }
       </Box>
     </>
   );

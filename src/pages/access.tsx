@@ -1,12 +1,16 @@
 import React from "react";
 import { Box } from "@mui/system";
 
+import ContentBox from "@/components/contentbox";
+
 import Styles from "../styles/Content.module.css";
 
 const Access = () => {
   return (
     <>
+    <div className={Styles.wrapper}>
       <Box>
+        <ContentBox>
         <h2>アクセス</h2>
         <h3>
           静岡大学 浜松キャンパス内 情報学部2号館 1階西側エレベーターホール前
@@ -21,7 +25,9 @@ const Access = () => {
           frameBorder="none"
         ></iframe>
         </div>
+        </ContentBox>
       </Box>
+      </div>
     </>
   );
 };

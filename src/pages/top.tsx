@@ -4,10 +4,12 @@ import { Box } from "@mui/system";
 import ContentBox from "@/components/contentbox";
 
 import Styles from "../styles/Content.module.css";
+import Meta from "./_meta";
 
 export const Top = () => {
   return (
     <>
+    <Meta title = "トップ" />
       <div className={Styles.wrapper}>
         <Box>
           <ContentBox>

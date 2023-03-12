@@ -3,6 +3,8 @@ import { Box } from "@mui/system";
 
 import ContentBox from "@/components/contentbox";
 
+import Meta from "./_meta";
+
 import Styles from "../styles/Content.module.css";
 
 import { Form } from "@/components/form";
@@ -11,6 +13,7 @@ import { Typography } from "@mui/material";
 const Contact = () => {
   return (
     <>
+      <Meta title="お問い合わせ" />
       <div className={Styles.wrapper}>
         <ContentBox>
           <Box>

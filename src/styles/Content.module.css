@@ -4,6 +4,15 @@
   background-color: rgb(223, 226, 228);
 }
 
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;  
+}
+
 .iframeWrapper {
-  max-width: fit-content;
+  position: relative;
+  padding-top: 100%;
 }

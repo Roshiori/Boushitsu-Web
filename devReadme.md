@@ -9,3 +9,7 @@ npm install @emotion/server
 
 #### Reat-Hook-Form
 npm install react-hook-form
+
+### nodemailer
+npm install nodemailer
+npm install --save @types/nodemailer

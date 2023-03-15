@@ -11,46 +11,87 @@ type InputSrc = {
   free: string;
 };
 
+export let Name: string = "";
+export let Email: string = "";
+export let Free: string = "";
+
 export const Form = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<InputSrc>();
+
   const onSubmit: SubmitHandler<InputSrc> = (data) => {
     console.log(data);
-    console.log(watch("email"));
-    Router.push("./received")
+    Name = data.name
+    Email = data.email
+    Free = data.free
+    console.log(Name)
+    console.log(Email)
+    console.log(Free)
+
+
+    fetch("/api/mail", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        // console.log("Response received", res);
+        if (res.status === 200) {
+          // console.log("Response succeeded!");
+          Router.push("./received")
+        } else {
+          console.log("しっぱい")
+        }
+      })
+      .catch((e) => console.log(e));
   };
 
   return (
     <>
       <div>
-        <Box>
-          <Typography>ここにフォーム</Typography>
-          <TextField id="name" label="お名前" {...register("name")} />
-          <TextField
-            id="email"
-            required
-            label="メールアドレス"
-            error={Boolean(errors.email)}
-            helperText={errors.email && "正しいメールアドレスを入力してください"}
-            {...register("email", {required:true, pattern: /\S+@\S+\.\S+/})}
-          />
-          <TextField
-            sx = {{width: "60vw"}}
-            id="free"
-            multiline
-            fullWidth
-            label="お問い合わせ内容"
-            rows={5}
-            {...register("free")}
-          />
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2} sx = {{textAlign: "center"}}>
+            <Grid item>
+              <TextField id="name" label="お名前" {...register("name")} />
+            </Grid>
+            <Grid item>
+              <TextField
+                id="email"
+                required
+                label="メールアドレス"
+                error={Boolean(errors.email)}
+                helperText={
+                  errors.email && "正しいメールアドレスを入力してください"
+                }
+                {...register("email", {
+                  required: true,
+                  pattern: /\S+@\S+\.\S+/,
+                })}
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                sx={{ minWidth: "71vw" }}
+                id="free"
+                multiline
+                label="お問い合わせ内容"
+                rows={5}
+                {...register("free")}
+              />
+            </Grid>
+          </Grid>
+
           <Button
             variant="contained"
             disableElevation
             onClick={handleSubmit(onSubmit)}
+            sx = {{marginTop: "15px"}}
           >
             送信
           </Button>

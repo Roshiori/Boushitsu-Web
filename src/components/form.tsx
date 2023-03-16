@@ -11,10 +11,6 @@ type InputSrc = {
   free: string;
 };
 
-export let Name: string = "";
-export let Email: string = "";
-export let Free: string = "";
-
 export const Form = () => {
   const {
     register,
@@ -24,21 +20,18 @@ export const Form = () => {
 
   const onSubmit: SubmitHandler<InputSrc> = (data) => {
     console.log(data);
-    Name = data.name
-    Email = data.email
-    Free = data.free
-    console.log(Name)
-    console.log(Email)
-    console.log(Free)
-
 
     fetch("/api/mail", {
       method: "POST",
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    },
+      body: JSON.stringify({
+        "name": data.name,
+        "email": data.email,
+        "free": data.free,
+    }),
     })
       .then((res) => {
         // console.log("Response received", res);
@@ -46,7 +39,7 @@ export const Form = () => {
           // console.log("Response succeeded!");
           Router.push("./received")
         } else {
-          console.log("しっぱい")
+          console.log("エラー")
         }
       })
       .catch((e) => console.log(e));

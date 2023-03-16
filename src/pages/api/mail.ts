@@ -5,6 +5,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 const ToList: string[] = [
   process.env.MAIL_RECEIVE1 as string,
   process.env.MAIL_RECEIVE2 as string,
+  process.env.MAIL_RECEIVE3 as string,
+  process.env.MAIL_RECEIVE4 as string,
 ];
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -23,7 +25,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const mailData = {
     from: process.env.MAIL_SEND,
     to: ToList,
-    subject: "お問い合わせありがとうございます！【静岡大学 ITソルーション室】",
+    subject: "お問い合わせ【静岡大学 ITソルーション室】",
     text:
       `お問い合わせを受け付けました. 内容は以下のとおりです. 通常3日以内に担当者からご返答させていただきます. 
 

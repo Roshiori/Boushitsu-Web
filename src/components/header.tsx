@@ -12,7 +12,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import TwitterIcon from '@mui/icons-material/Twitter';
+import TwitterIcon from "@mui/icons-material/Twitter";
 import { Drawer, SwipeableDrawer, Stack } from "@mui/material";
 
 //Components
@@ -21,7 +21,7 @@ import { Drawer, SwipeableDrawer, Stack } from "@mui/material";
 import { ContextButton } from "./Layout";
 
 const Header = () => {
-    const { drawer, setDrawer } = useContext(ContextButton);
+  const { drawer, setDrawer } = useContext(ContextButton);
 
   return (
     <>
@@ -41,7 +41,7 @@ const Header = () => {
                 fontWeight: "700",
                 color: "inherit",
                 textDecoration: "none",
-                marginLeft: "40px"
+                marginLeft: "40px",
               }}
             >
               静岡大学 ITソルーション室
@@ -49,7 +49,7 @@ const Header = () => {
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
-                onClick={() => setDrawer(!drawer)} 
+                onClick={() => setDrawer(!drawer)}
                 size="large"
                 aria-label="sidebar"
                 aria-controls="menu-appbar"
@@ -76,9 +76,17 @@ const Header = () => {
             >
               静岡大学 ITソルーション室
             </Typography>
-            <a href = "https://twitter.com/Shizuoka_ITS" target="_blank" rel="noopener noreferrer">
-            <IconButton sx = {{marginRight: "40px", color: "white"} }><TwitterIcon/></IconButton>
-              </a>
+            <a
+              href="https://twitter.com/Shizuoka_ITS"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconButton
+                sx={{ marginRight: { xs: "12px", md: "40px" }, color: "white" }}
+              >
+                <TwitterIcon />
+              </IconButton>
+            </a>
           </Toolbar>
         </AppBar>
       </header>

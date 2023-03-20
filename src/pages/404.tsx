@@ -6,15 +6,14 @@ import ContentBox from "@/components/contentbox";
 import Styles from "../styles/Content.module.css";
 import Meta from "./_meta";
 
-const About = () => {
+const NotFoundError = () => {
   return (
     <>
-      <Meta title="ITソルーション室とは" />
+    <Meta title = "404 Error" />
       <div className={Styles.wrapper}>
         <Box>
           <ContentBox>
-            <h2 className={Styles.heading}>ITソルーション室とは</h2>
-            <p>てすと</p>
+            <p>404 Not Found</p>
           </ContentBox>
         </Box>
       </div>
@@ -22,4 +21,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default NotFoundError;

@@ -17,7 +17,7 @@ const Contact = () => {
       <div className={Styles.wrapper}>
         <ContentBox>
           <Box>
-            <h2>お問い合わせ</h2>
+            <h2 className={Styles.heading}>お問い合わせ</h2>
             <p>ITソルーション室に関する質問や, 入室希望のご連絡等を受け付けています. 入力いただいたメールアドレスに, 通常3日以内にご連絡させていただきます. </p>
             <Form />
           </Box>

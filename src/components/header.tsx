@@ -12,6 +12,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import TwitterIcon from '@mui/icons-material/Twitter';
 import { Drawer, SwipeableDrawer, Stack } from "@mui/material";
 
 //Components
@@ -50,7 +51,7 @@ const Header = () => {
               <IconButton
                 onClick={() => setDrawer(!drawer)} 
                 size="large"
-                aria-label="account of current user"
+                aria-label="sidebar"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 color="inherit"
@@ -75,6 +76,9 @@ const Header = () => {
             >
               静岡大学 ITソルーション室
             </Typography>
+            <a href = "https://twitter.com/Shizuoka_ITS" target="_blank" rel="noopener noreferrer">
+            <IconButton sx = {{marginRight: "40px", color: "white"} }><TwitterIcon/></IconButton>
+              </a>
           </Toolbar>
         </AppBar>
       </header>

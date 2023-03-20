@@ -14,7 +14,7 @@ const Access = () => {
     <div className={Styles.wrapper}>
       <Box>
         <ContentBox>
-        <h2>アクセス</h2>
+        <h2 className={Styles.heading}>アクセス</h2>
         <h4>
           静岡大学 浜松キャンパス内 情報学部2号館 1階西側エレベーターホール前
         </h4>

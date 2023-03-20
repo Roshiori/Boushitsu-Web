@@ -36,7 +36,7 @@ const Sidebar = () => {
       <Box
         sx={{
           color: "white",
-          backgroundColor: "text.primary",
+          backgroundColor: "#323636",
           width: drawerWidth,
           minHeight: "100vh",
         }}

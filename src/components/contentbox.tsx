@@ -19,6 +19,7 @@ const ContentBox = ({ children }: Children) => {
           paddingTop: "30px",
           paddingBottom: "30px",
           backgroundColor: "white",
+          borderRadius: "15px"
         }}
       >
         { children }

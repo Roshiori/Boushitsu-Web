@@ -1,7 +1,12 @@
 .wrapper {
   min-height: 100vh;
   width: 100vw;
-  background-color: rgb(223, 226, 228);
+  background-color: #e4f4f4;
+}
+
+.heading{
+  padding-left: 10px;
+  border-left: 5px solid #00756A;
 }
 
 .iframe {

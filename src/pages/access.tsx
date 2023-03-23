@@ -6,6 +6,7 @@ import ContentBox from "@/components/contentbox";
 import Styles from "../styles/Content.module.css";
 import Meta from "./_meta";
 import { Typography } from "@mui/material";
+import Image from "next/image";
 
 const Access = () => {
   return (
@@ -19,6 +20,7 @@ const Access = () => {
           静岡大学 浜松キャンパス内 情報学部2号館 1階西側エレベーターホール前
         </h4>
         <h4>静岡県浜松市中区城北(じょうほく) 3-5-1</h4>
+        <Image src = "/images/nishi_elevator.jpeg" alt = "西側エレベーター" width="400" height="300" />
         <Typography>浜松駅バスターミナル 15番/16番から出発するすべてのバスが「静岡大学」バス停に停車します。</Typography>
         <div className= {Styles.iframeWrapper}>
         <iframe

@@ -4,14 +4,12 @@ import { Box } from "@mui/system";
 import ContentBox from "@/components/contentbox";
 
 import Styles from "../styles/Content.module.css";
-import Meta from "./_meta";
 import Image from "next/image";
 
-export const Top = () => {
+export const TopMainPic = () => {
   return (
     <>
-      <Meta title="トップ" />
-      <div className={Styles.wrapper}>
+      <div>
         <Box>
           <Box sx = {{textAlign: "center",}}>
             <Image
@@ -28,9 +26,6 @@ export const Top = () => {
               }}
             />
           </Box>
-          <ContentBox>
-            <p>とっぷ</p>
-          </ContentBox>
         </Box>
       </div>
     </>

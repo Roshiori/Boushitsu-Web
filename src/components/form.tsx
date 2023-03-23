@@ -83,7 +83,7 @@ export const Form = () => {
             variant="contained"
             disableElevation
             onClick={handleSubmit(onSubmit)}
-            sx = {{marginTop: "15px"}}
+            sx = {{marginTop: "15px", borderRadius: "24.5px"}}
           >
             送信
           </Button>
